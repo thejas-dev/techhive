@@ -108,7 +108,6 @@ export default function Home() {
 			        		onClick={()=>{
 			        			setSidebar(true);
 			        			setCreateItemWindow(true);
-			        			window.scrollTo(0,0);
 			        		}}
 			        		className="flex text-sky-400 border-[1px] border-sky-500 border-dashed 
 			        		px-3 py-2 rounded-xl hover:border-solid transition-all duration-300 ease-in-out 
