@@ -52,7 +52,7 @@ export default function Home() {
 	return (
 		<div className="App min-h-screen w-full z-10 bg-gradient-to-r from-blue-500/50 scroll-smooth to-purple-600/50">
 	      	<img src='https://ik.imagekit.io/thejas/bg.jpg?updatedAt=1690899127919'
- 			 className="fixed h-full w-full z-0 opacity-70"/>
+ 			 className="fixed h-[100vh] w-full z-0 opacity-70"/>
  			<img src='https://ik.imagekit.io/thejas/OIP-removebg-preview.png?updatedAt=1690990084901'
  			 className="fixed h-[50px] w-[50px] z-0 top-[150px] md:right-[200px] right-[100px] rotate-45 blur-[1.2px] opacity-70"/> 
  			
@@ -61,7 +61,7 @@ export default function Home() {
 	        <header className="top-0 px-3 py-3 w-full sticky flex z-40 items-center backdrop-blur-lg">
 	          <nav className="max-w-6xl mx-auto flex items-center w-full justify-between select-none">
 	            <h1 className="md:text-3xl text-2xl text-gray-200 font-semibold">App&#39;opedia</h1>
-	            <div className="flex items-center gap-2 relative">
+	            <div className="flex items-center gap-2 relative overflow-hidden">
 	            	<div 
 	            	onClick={()=>{setCurrentUser('');sessionStorage?.removeItem('techhive-task');navigate('/signin')}}
 	            	className={`absolute ${openSignOutWindow ? 'right-3' : '-right-[400px]'} transition-all
