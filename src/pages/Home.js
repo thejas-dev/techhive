@@ -47,7 +47,7 @@ export default function Home() {
 			setOpenUserImageAdd(true)
 		}
 		checkForAuthData()
-	},[])
+	},[currentUser])
 
 	return (
 		<div className="App min-h-screen w-full z-10 bg-gradient-to-r from-blue-500/50 scroll-smooth to-purple-600/50">
@@ -61,11 +61,11 @@ export default function Home() {
 	        <header className="top-0 px-3 py-3 w-full sticky flex z-40 items-center backdrop-blur-lg">
 	          <nav className="max-w-6xl mx-auto flex items-center w-full justify-between select-none">
 	            <h1 className="md:text-3xl text-2xl text-gray-200 font-semibold">App&#39;opedia</h1>
-	            <div className="flex items-center gap-2 relative overflow-hidden">
+	            <div className="flex items-center gap-2 relative">
 	            	<div 
 	            	onClick={()=>{setCurrentUser('');sessionStorage?.removeItem('techhive-task');navigate('/signin')}}
-	            	className={`absolute ${openSignOutWindow ? 'right-3' : '-right-[400px]'} transition-all
-	            	duration-300 ease-in-out px-5 top-12 rounded-xl backdrop-blur-lg bg-black/40 py-2 border-[1px] border-red-500 flex 
+	            	className={`absolute ${openSignOutWindow ? 'top-12' : '-top-[150px]'} right-3 transition-all
+	            	duration-300 ease-in-out px-5  rounded-xl backdrop-blur-lg bg-black/40 py-2 border-[1px] border-red-500 flex 
 	            	items-center gap-2 hover:bg-black/20 hover:scale-105 cursor-pointer`}>
 	            		<span className="text-red-500 font-semibold whitespace-nowrap text-lg">Sign out</span>
 	            		<FiLogOut className="h-6 w-6 text-red-500"/>
@@ -89,7 +89,9 @@ export default function Home() {
 	        <section id="hero" className=" relative" >
 		    	<HeroComponent />
 	        </section>
+		    <h1 className="md:text-3xl text-2xl text-center mb-7 z-30 relative font-semibold text-gray-200">Explore by here</h1>
 	        <body className="flex w-full mt-2 h-full  pb-10 overflow-x-hidden bg-transparent" >
+
 		        <div className={`h-full ${sideBar ? 'md:w-[70%] sm:w-[50%] w-[100%]' : 'w-[100%]'} overflow-x-hidden flex flex-col transition-all duration-300 ease-in-out`} >
 		        	<div id="itemList"/>
 		        	<div 
@@ -107,12 +109,14 @@ export default function Home() {
 			        		<button 
 			        		onClick={()=>{
 			        			setSidebar(true);
+								let ele = document.getElementById('addListText');
+								ele.scrollIntoView({behavior:'smooth',block:"start"});			        			
 			        			setCreateItemWindow(true);
 			        		}}
 			        		className="flex text-sky-400 border-[1px] border-sky-500 border-dashed 
 			        		px-3 py-2 rounded-xl hover:border-solid transition-all duration-300 ease-in-out 
 			        		font-semibold md:text-xl text-lg items-center gap-2 hover:bg-blue-800/30">
-			        			<AiOutlinePlusCircle className="h-7 w-7"/>	Add new item
+			        			<AiOutlinePlusCircle className="h-7 w-7"/>	Add my app
 			        		</button>
 			        	</div>
 		        	}

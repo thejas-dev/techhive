@@ -62,7 +62,7 @@ export default function UserImageAddAlertComponent() {
 	}  
 
 	return (
-		<main onClick={()=>setOpenUserImageAdd(false)} className={`h-full flex items-center justify-center z-50 
+		<main className={`h-full flex items-center justify-center z-50 
 		w-full fixed backdrop-blur-lg ${openUserImageAdd ? 'left-0' : '-left-[100%]'} transition-all
 		duration-300 ease-in-out`}>
 			<div className="flex flex-col items-center">
@@ -74,7 +74,7 @@ export default function UserImageAddAlertComponent() {
 				border-[1px] border-sky-500 w-[250px] backdrop-blur-md bg-sky-100/10 aspect-square
 				hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer relative">
 					<div className={`${uploading ? 'block':'hidden'} h-full w-full absolute z-50
-					backdrop-blur-lg bg-white/10 flex items-center justify-center`}>
+					bg-black/50 flex items-center justify-center rounded-xl`}>
 						<span className="loader border-sky-500"/>
 					</div>
 					{

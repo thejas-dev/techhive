@@ -21,7 +21,7 @@ export default function ItemCard({item,j}) {
 			opacity:0,
 		}}
 		whileInView={{opacity:1}}
-		transition={{duration:0.4}}
+		transition={{duration:0.5}}
 		viewport={{ once: true }}
 		onClick={()=>{
 			if(!uploading){
@@ -31,12 +31,16 @@ export default function ItemCard({item,j}) {
 					setSelectedItem('');
 					setCreateItemWindow(false);	
 					setEditApp(false);	
+					let ele = document.getElementById('addListText');
+					ele.scrollIntoView({behavior:'smooth',block:"start"});
 				}else{
 					setSidebar(true)
 					setCreateItemWindow(false);		
 					setEditApp(false);	
 					setShowItem(item);
 					setShowItemIndex(j);
+					let ele = document.getElementById('addListText');
+					ele.scrollIntoView({behavior:'smooth',block:"start"});
 				}			
 			}
 		}}

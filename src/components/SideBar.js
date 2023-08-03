@@ -134,7 +134,7 @@ export default function SideBar({fetchItem}) {
 	}
 
 	const editItemFun = async() => {
-		document.getElementById('addListText').scrollIntoView({behavior:'smooth',block:"center"});
+		document.getElementById('addListText').scrollIntoView({behavior:'smooth',block:"start"});
 		if(currentUser){
 			setUploading(true);
 			uploadEditImageFun()
@@ -142,7 +142,7 @@ export default function SideBar({fetchItem}) {
 	}
 
 	const createItem = async() => {
-		document.getElementById('addListText').scrollIntoView({behavior:'smooth',block:"center"});
+		document.getElementById('addListText').scrollIntoView({behavior:'smooth',block:"start"});
 		if(itemDescription.length > 5 && itemName.length > 5 && image && currentUser){
 			setUploading(true);
 			uploadImageFun()
@@ -158,9 +158,9 @@ export default function SideBar({fetchItem}) {
 	}
 
 	return (
-		<div className={`sm:h-full h-[100vh] right-0 top-0 ${sideBar ? 'md:w-[30%] sm:w-[50%] w-[100%] sm:relative fixed z-50 sm:z-10' : 'w-[0%] sm:relative fixed'} backdrop-blur-lg 
-		transition-all duration-300 ease-in-out overflow-hidden sm:bg-transparent bg-black/40`} >
-			<div className="h-full  sm:rounded-l-xl w-full sm:border-[1px] border-blue-200/80 overflow-y-scroll">
+		<div className={`sm:h-full h-[100vh] right-0 top-0 ${sideBar ? 'md:w-[30%] sm:w-[50%] w-[100%] sm:relative fixed z-50 sm:z-10' : 'w-[0%] sm:relative fixed'} 
+		backdrop-blur-lg transition-all duration-300  ease-in-out overflow-hidden sm:bg-transparent bg-black/40`} >
+			<div className="h-full md:pb-[10px] pb-[50px] sm:rounded-l-xl w-full sm:border-l-[1px] sm:border-y-[1px] border-blue-200/80 ">
 				<div className=" px-4 rounded-l-xl 
 				rounded-b-[0px] py-2 flex items-center gap-3 backdrop-blur-lg">
 					<BsArrowLeft onClick={()=>closeTheSideBar()} className={`h-5 w-5 
@@ -183,7 +183,7 @@ export default function SideBar({fetchItem}) {
 					ease-in-out cursor-pointer border-sky-500 flex flex-col 
 					items-center justify-center hover:scale-105 relative">
 						<div className={`${uploading ? 'block':'hidden'} h-full w-full absolute z-50
-						backdrop-blur-lg bg-white/10 flex items-center rounded-xl justify-center`}>
+						bg-black/50 flex items-center rounded-xl justify-center`}>
 							<span className="loader border-sky-500"/>
 						</div>
 						{

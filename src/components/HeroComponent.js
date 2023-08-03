@@ -13,7 +13,10 @@ export default function HeroComponent() {
 	        index++;
 	      }else{
 	        clearInterval(interval);
-	        document.getElementById('itemList').scrollIntoView({behavior:'smooth',block:'center'})
+	        let ele = document.getElementById('itemList');
+	        if(ele){
+	        	ele.scrollIntoView({behavior:'smooth',block:'center'})
+	        }
 	      }
 	    },20)
 	}
