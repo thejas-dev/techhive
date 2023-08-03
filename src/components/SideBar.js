@@ -198,7 +198,7 @@ export default function SideBar({fetchItem}) {
 							(!image && !showItem?.itemImage) &&
 							<>
 								<AiOutlinePlusCircle className="h-[30%] w-[30%] text-sky-500"/>
-								<h1 className="text-lg px-2 font-semibold text-sky-400">Add item image</h1>
+								<h1 className="text-lg px-2 font-semibold text-sky-400">Add app image</h1>
 							</>
 						}
 						<input type="file" accept="image/*" id="file"
@@ -249,7 +249,7 @@ export default function SideBar({fetchItem}) {
 									  <input type="checkbox" value={nameCheck} onChange={(e)=>setNameCheck(e.target.checked)} />
 									  <div class="checkmark"></div>
 									</label>
-									<h1 className="inline-block col-span-9 align-middle text-lg font-semibold text-gray-200">Enable edit option after adding</h1>
+									<h1 className="inline-block col-span-9 align-middle text-lg font-semibold text-gray-200">Enable edit and delete option</h1>
 								</div>
 							}
 
